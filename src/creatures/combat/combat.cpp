@@ -191,6 +191,7 @@ ConditionType_t Combat::DamageToConditionType(CombatType_t type) {
 	}
 }
 
+// TODO - incluir novo tipo de subOwner - isChar? getChar (mistura de Summon com NPC?)
 bool Combat::isPlayerCombat(const std::shared_ptr<Creature> &target) {
 	if (target->getPlayer()) {
 		return true;
