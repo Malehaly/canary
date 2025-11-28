@@ -381,7 +381,6 @@ int SpellFunctions::luaSpellGroupCooldown(lua_State* L) {
 	return 1;
 }
 
-
 int SpellFunctions::luaSpellCastingTime(lua_State* L) {
 	// spell:castingTime(castingTime[, totalCastingTime])
 	const auto &spell = Lua::getUserdataShared<Spell>(L, 1, "Spell");

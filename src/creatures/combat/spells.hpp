@@ -162,7 +162,7 @@ public:
 	[[nodiscard]] uint32_t getGroupCooldown() const;
 	void setGroupCooldown(uint32_t cd);
 
-	//Devir - casting and channeling
+	// Devir - casting and channeling
 	[[nodiscard]] uint32_t getCastingTime() const;
 	void setCastingTime(uint32_t cd);
 	[[nodiscard]] uint32_t getTotalCastingTime() const;
