@@ -381,6 +381,45 @@ int SpellFunctions::luaSpellGroupCooldown(lua_State* L) {
 	return 1;
 }
 
+
+int SpellFunctions::luaSpellCastingTime(lua_State* L) {
+	// spell:castingTime(castingTime[, totalCastingTime])
+	const auto &spell = Lua::getUserdataShared<Spell>(L, 1, "Spell");
+	if (spell) {
+		if (lua_gettop(L) == 1) {
+			lua_pushnumber(L, spell->getCastingTime());
+			lua_pushnumber(L, spell->getTotalCastingTime());
+			return 2;
+		} else if (lua_gettop(L) == 2) {
+			spell->setCastingTime(Lua::getNumber<uint32_t>(L, 2));
+			Lua::pushBoolean(L, true);
+		} else {
+			spell->setCastingTime(Lua::getNumber<uint32_t>(L, 2));
+			spell->setTotalCastingTime(Lua::getNumber<uint32_t>(L, 3));
+			Lua::pushBoolean(L, true);
+		}
+	} else {
+		lua_pushnil(L);
+	}
+	return 1;
+}
+
+int SpellFunctions::luaSpellChanneling(lua_State* L) {
+	// spell:isChanneling(bool)
+	const auto &spell = Lua::getUserdataShared<Spell>(L, 1, "Spell");
+	if (spell) {
+		if (lua_gettop(L) == 1) {
+			Lua::pushBoolean(L, spell->isChanneling());
+		} else {
+			spell->setChanneling(Lua::getBoolean(L, 2));
+			Lua::pushBoolean(L, true);
+		}
+	} else {
+		lua_pushnil(L);
+	}
+	return 1;
+}
+
 int SpellFunctions::luaSpellLevel(lua_State* L) {
 	// spell:level(lvl)
 	const auto &spell = Lua::getUserdataShared<Spell>(L, 1, "Spell");

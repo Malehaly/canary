@@ -7786,7 +7786,7 @@ void ProtocolGame::sendVIPGroups() {
 
 void ProtocolGame::sendSpellCooldown(uint16_t spellId, uint32_t time) {
 	NetworkMessage msg;
-	msg.addByte(0xA4);
+	msg.addByte(0x50);
 	if (oldProtocol && spellId >= 170) {
 		msg.addByte(170);
 	} else {
@@ -7808,6 +7808,23 @@ void ProtocolGame::sendSpellGroupCooldown(SpellGroup_t groupId, uint32_t time) {
 	NetworkMessage msg;
 	msg.addByte(0xA5);
 	msg.addByte(groupId);
+	msg.add<uint32_t>(time);
+	writeToOutputBuffer(msg);
+}
+
+void ProtocolGame::sendSpellCastingTime(uint16_t spellId, uint32_t time) {
+	NetworkMessage msg;
+	msg.addByte(0xA5);
+
+	if (oldProtocol && spellId >= 170) {
+		msg.addByte(170);
+	} else {
+		if (oldProtocol) {
+			msg.addByte(spellId);
+		} else {
+			msg.add<uint16_t>(spellId);
+		}
+	}
 	msg.add<uint32_t>(time);
 	writeToOutputBuffer(msg);
 }

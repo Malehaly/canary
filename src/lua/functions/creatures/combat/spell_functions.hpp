@@ -58,4 +58,8 @@ private:
 	static int luaSpellAllowFarUse(lua_State* L);
 	static int luaSpellBlockWalls(lua_State* L);
 	static int luaSpellCheckFloor(lua_State* L);
+
+	// Devir - Casting and Channeling
+	static int luaSpellCastingTime(lua_State* L);
+	static int luaSpellChanneling(lua_State* L);
 };

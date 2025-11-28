@@ -419,6 +419,10 @@ private:
 	void sendSpellGroupCooldown(SpellGroup_t groupId, uint32_t time);
 	void sendUseItemCooldown(uint32_t time);
 
+	// Devir - send Casting and Channeling
+	void sendSpellCastingTime(uint16_t spellId, uint32_t time);
+	void sendSpellChanneling(bool channeling);
+
 	void sendCoinBalance();
 
 	void sendPreyTimeLeft(const std::unique_ptr<PreySlot> &slot);

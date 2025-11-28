@@ -978,6 +978,26 @@ void Spell::setGroupCooldown(uint32_t cd) {
 	groupCooldown = cd;
 }
 
+uint32_t Spell::getCastingTime() const {
+	return castingTime;
+}
+
+void Spell::setCastingTime(uint32_t cd) {
+	castingTime = cd;
+}
+
+uint32_t Spell::getTotalCastingTime() const {
+	return totalCastingTime;
+}
+
+void Spell::setTotalCastingTime(uint32_t cd) {
+	totalCastingTime = cd;
+}
+
+void Spell::setChanneling(bool c) {
+	channeling = c;
+}
+
 int32_t Spell::getRange() const {
 	return range;
 }

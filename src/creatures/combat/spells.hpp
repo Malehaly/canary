@@ -162,6 +162,14 @@ public:
 	[[nodiscard]] uint32_t getGroupCooldown() const;
 	void setGroupCooldown(uint32_t cd);
 
+	//Devir - casting and channeling
+	[[nodiscard]] uint32_t getCastingTime() const;
+	void setCastingTime(uint32_t cd);
+	[[nodiscard]] uint32_t getTotalCastingTime() const;
+	void setTotalCastingTime(uint32_t cd);
+	[[nodiscard]] bool isChanneling() const;
+	void setChanneling(bool c);
+
 	[[nodiscard]] int32_t getRange() const;
 	void setRange(int32_t r);
 
@@ -252,6 +260,11 @@ protected:
 	bool needTarget = false;
 	bool allowOnSelf = true;
 	bool pzLocked = false;
+
+	// Devir - casting and channeling
+	uint32_t castingTime = 1000;
+	uint32_t totalCastingTime = 1200;
+	bool channeling = false;
 
 	bool whellOfDestinyUpgraded = false;
 	std::array<int32_t, magic_enum::enum_count<WheelSpellBoost_t>() + 1> wheelOfDestinyRegularBoost = { 0 };
