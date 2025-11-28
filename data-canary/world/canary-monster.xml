@@ -1,2 +1,30 @@
 <?xml version="1.0"?>
-<monsters />
+<monsters>
+	<monster centerx="4962" centery="5294" centerz="5" radius="1">
+		<monster name="Larva" x="0" y="0" z="5" spawntime="60" />
+	</monster>
+	<monster centerx="4984" centery="5294" centerz="5" radius="1">
+		<monster name="Larva" x="0" y="0" z="5" spawntime="60" />
+	</monster>
+	<monster centerx="4962" centery="5308" centerz="5" radius="1">
+		<monster name="Larva" x="0" y="0" z="5" spawntime="60" />
+	</monster>
+	<monster centerx="4991" centery="5308" centerz="5" radius="1">
+		<monster name="Larva" x="0" y="0" z="5" spawntime="60" />
+	</monster>
+	<monster centerx="4950" centery="5311" centerz="5" radius="1">
+		<monster name="Larva" x="0" y="0" z="5" spawntime="60" />
+	</monster>
+	<monster centerx="4981" centery="5323" centerz="6" radius="1">
+		<monster name="Larva" x="0" y="0" z="6" spawntime="60" />
+	</monster>
+	<monster centerx="4968" centery="5326" centerz="6" radius="1">
+		<monster name="Larva" x="0" y="0" z="6" spawntime="60" />
+	</monster>
+	<monster centerx="4944" centery="5327" centerz="6" radius="1">
+		<monster name="Larva" x="0" y="0" z="6" spawntime="60" />
+	</monster>
+	<monster centerx="4949" centery="5328" centerz="6" radius="1">
+		<monster name="Larva" x="0" y="0" z="6" spawntime="60" />
+	</monster>
+</monsters>
